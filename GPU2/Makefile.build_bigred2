@@ -1,6 +1,6 @@
 FC = gfortran -fPIC
-FFLAGS = -Wall -O3 -fopenmp -ffast-math -lm
-#FFLAGS +=  -O3 -fbounds-check
+FFLAGS = -Wall -O3 -ffast-math 
+#FFLAGS +=  -fbounds-check
 #FFLAGS +=  -traceback
 #FFLAGS +=  -pg
 ifeq ($(avx), enable)
@@ -9,15 +9,15 @@ else
 FFLAGS += -march=core2
 endif
 
-#LIBCUDA = -L /opt/sharcnet/cuda/6.5.14/toolkit/lib64 -lcudart
-LIBCUDA = -L /opt/sharcnet/cuda/7.5.18/lib64 -lcudart
+#LIBCUDA = -L /opt/nvidia/cudatoolkit6.5/6.5.14-1.0502.9613.6.1/lib64 -lcudart
+LIBCUDA = -L /opt/nvidia/cudatoolkit7.0/7.0.28-1.0502.10742.5.1/lib64 -lcudart
 
-LD_GPU = gfortran -lstdc++ -lm -fopenmp $(LIBCUDA)
+LD_GPU = gfortran -lstdc++ -fopenmp $(LIBCUDA)
 LD_GPU += -fPIC
-LD_GPU += -B /usr/share/libhugetlbfs -Wl,--hugetlbfs-align
+LD_GPU += -B /usr/share/libhugetlbfs -Wl,--hugetlbfs-link=B
 
 LD_SSE = gfortran -lstdc++ -fopenmp
-LD_SSE += -B /usr/share/libhugetlbfs -Wl,--hugetlbfs-align
+LD_SSE += -B /usr/share/libhugetlbfs -Wl,--hugetlbfs-link=B
 
 #default value of chainmode is chain
 chainmode ?= chain
@@ -72,9 +72,9 @@ stablz.f start3.f subsys.f tperi.f trans3.f \
 quad.f derqp4.f difsy4.f endreg.f erel4.f ichain.f newreg.f newsys.f \
 qpmod4.f rchain.f rsort.f stabl4.f start4.f status.f trans4.f \
 brake4.f ksrot.f expand2.f deform2.f circ.f spinup.f \
-ttinit.f ttcal.f ttforce.f ttgalaxy.f
+ttinit.f ttcal.f ttforce.f ttgalaxy.f bhmgain.f
 ### FlorentR - add ttinit.f, ttcal.f, ttforce.f ttgalaxy.f (above)
-
+### NBODY6SMBH - add bhmgain.f
 else
 #KS block-step version
 SOURCE = \
@@ -111,9 +111,9 @@ tides.f  tides2.f  tides3.f touch.f   tperi.f  tpert.f  trans3.f trans4.f \
 trdot.f  trdot2.f  trflow.f triple.f  tstab.f  tstep.f  units.f  unpert.f \
 update.f verify.f  xtrnl0.f xtrnld.f  xtrnlf.f xtrnlp.f xtrnlt.f xtrnlv.f \
 xvpred.f zare.f    zcnsts.f zero.f    zfuncs.f \
-ttinit.f ttcal.f ttforce.f ttgalaxy.f
+ttinit.f ttcal.f ttforce.f ttgalaxy.f bhmgain.f
 ### FlorentR - add ttinit.f, ttcal.f, ttforce.f ttgalaxy.f (above)
-
+### NBODY6SMBH - add bhmgain.f
 endif
 
 ifeq ($(chainmode), chain)
@@ -147,10 +147,10 @@ jpred2.f jpred.f ksres3.f nbintp.f phicor.f repair.f sweep2.f bhplot.f \
 fpoly0.f kspinit.f kspreg.f
 
 OBJECTS = $(SOURCE:.f=.o)
-OBJECTS += gpuirr.o gpunb.o gpupot.o wtime.o cnbint.o cxvpred.o 
+OBJECTS += gpuirr.o gpunb.o gpupot.o wtime.o cnbint.o cxvpred.o
 
 gpu: $(OBJECTS)
-	gfortran -o nbody6mp $(FFLAGS) $(OBJECTS)  -fopenmp $(LIBCUDA)  -lstdc++ -fPIC -fopenmp -Wall -O3 -ffmast-math 
+	$(LD_GPU) $(FFLAGS) $(OBJECTS) -o nbody6mp
 
 sse: $(OBJECTS)
 	$(LD_SSE) $(FFLAGS) $(OBJECTS) -o nbody6mp
