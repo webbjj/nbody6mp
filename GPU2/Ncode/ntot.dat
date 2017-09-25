@@ -1,0 +1,223 @@
+adjust.f:      CALL XVPRED(IFIRST,NTOT)
+adjust.f:      DO 30 I = IFIRST,NTOT
+bindat.f:          DO 9 J = IFIRST,NTOT
+bindat.f:      DO 80 I = IFIRST,NTOT
+binpop.f:          NTOT = N
+binpop.f:          NTOT = N
+bodies.f:      DO 40 I = IFIRST,NTOT
+body.dat:fpoly1.f:              F(K,NTOT) = (A1*F(K,ICOMP) + A2*F(K,JCOMP))/BODY(NTOT)
+body.dat:fpoly1.f:     &                                                        BODY(NTOT)
+body.dat:fpoly1.f:              FI(K,NTOT) = (A1*FI(K,ICOMP) + A2*FI(K,JCOMP))/BODY(NTOT)
+body.dat:fpoly1.f:              D1(K,NTOT) = (A1*D1(K,ICOMP) + A2*D1(K,JCOMP))/BODY(NTOT)
+body.dat:fpoly1.f:              FR(K,NTOT) = (A1*FR(K,ICOMP) + A2*FR(K,JCOMP))/BODY(NTOT)
+body.dat:fpoly1.f:     &                                                        BODY(NTOT)
+body.dat:impact.f:          ZMU = BODY(2*NPAIRS-1)*BODY(2*NPAIRS)/BODY(NTOT)
+body.dat:ksinit.f:      BODY(NTOT) = BODY(ICOMP) + BODY(JCOMP)
+body.dat:ksinit.f:      BODY0(NTOT) = BODY(NTOT)
+body.dat:ksinit.f:          X(K,NTOT) = (BODY(ICOMP)*X(K,ICOMP) + BODY(JCOMP)*X(K,JCOMP))/
+body.dat:ksinit.f:     &                                                        BODY(NTOT)
+body.dat:ksinit.f:          X0DOT(K,NTOT) = (BODY(ICOMP)*X0DOT(K,ICOMP) + BODY(JCOMP)*
+body.dat:ksinit.f:     &                                        X0DOT(K,JCOMP))/BODY(NTOT)
+body.dat:ksinit.f:     &                                              BODY(NTOT))/R(IPAIR)
+body.dat:ksinit.f:      EB = H(IPAIR)*BODY(ICOMP)*BODY(JCOMP)/BODY(NTOT)
+body.dat:ksinit.f:      SEMI = -0.5*BODY(NTOT)/H(IPAIR)
+body.dat:ksinit.f:          TK = TWOPI*SEMI*SQRT(SEMI/BODY(NTOT))
+body.dat:ksinit.f:              CALL TPERI(SEMI,UI,VI,BODY(NTOT),TP)
+body.dat:ksinit.f:          TK = TWOPI*SEMI*SQRT(SEMI/BODY(NTOT))
+body.dat:ksinit.f:      SEMI = -0.5*BODY(NTOT)/H(IPAIR)
+body.dat:ksinit.f:      ECC2 = (1.0-R(IPAIR)/SEMI)**2 + TDOT2(IPAIR)**2/(BODY(NTOT)*SEMI)
+body.dat:ksinit.f:          R0(IPAIR) = MAX(RMIN,-BODY(NTOT)/H(IPAIR))
+body.dat:ksinit.f:              PD = DAYS*SEMI*SQRT(ABS(SEMI)/BODY(NTOT))
+body.dat:ksinit.f:          SEMI = -0.5*BODY(NTOT)/H(IPAIR)
+body.dat:output.f:      WRITE (3)  (AS(K),K=1,NK), (BODYS(J),J=1,NTOT),
+body.dat:reset.f:*     CORR = 1.0 + 2.0*DPHI/(BODY(NTOT)*VI2)
+body.dat:reset.f:      EB = BODY(2*NPAIRS-1)*BODY(2*NPAIRS)*H(NPAIRS)/BODY(NTOT)
+body.dat:sweep.f:     &                            TDOT2(NPAIRS)**2/(BODY(NTOT)*SEMI)
+check.f:          DO 60 I = IFIRST,NTOT
+cmbody.f:*       Remove ghost from list of I1 (use NTOT as dummy here).
+cmbody.f:          CALL NBREM(NTOT,1,1)
+cmbody.f:          CALL NBREM(NTOT,1,1)
+cmcorr.f:      DO 20 I = IFIRST,NTOT
+cmcorr.f:      DO 40 I = IFIRST,NTOT
+cmcorr.f:          DO 60 I = IFIRST,NTOT
+cmcorr.f:      DO 70 I = IFIRST,NTOT 
+cmfreg.f:      DO 20 J = IFIRST,NTOT
+coal.f:     &                     R(NPAIRS), H(NPAIRS), STEP(NTOT)
+common6.h:      COMMON/NAMES/  NTOT,NPAIRS,NTTOT,N,NNBMAX,NCRIT,NFIX,NMERGE,NSUB,
+common6.h.save:      COMMON/NAMES/  NTOT,NPAIRS,NTTOT,N,NNBMAX,NCRIT,NFIX,NMERGE,NSUB,
+core.f:      DO 10 I = IFIRST,NTOT
+degen.f:*         DO 5 J = IFIRST,NTOT
+energy.f:      DO 40 I = IFIRST,NTOT
+escape.f:          DO 8 J = IFIRST,NTOT
+escape.f:      IF (I.LE.NTOT) GO TO 5
+escape.f:      NTOT = NTOT - 1
+escape.f:   60 DO 150 J = 1,NTOT
+escape.f:              DO 196 J = IFIRST,NTOT
+escape.f:          NTOT = NTOT - 1
+escape.f:*       Reduce NTOT by 3 and N by 2 when KS pair escapes.
+escape.f:          DO 208 J = IFIRST,NTOT
+escape.f:          DO 215 J = IFIRST,NTOT
+escape.f:              DO 225 J = IFIRST,NTOT
+escape.f:      DO 230 J = IFIRST,NTOT
+escape.f:          DO 232 J = IFIRST,NTOT
+evolve.f:          IHIGH = NTOT
+expel.f:              I = NTOT
+expel.f:      DO 55 I = N+1,NTOT
+fcorr.f:      DO 40 J = IFIRST,NTOT
+ficorr.f:      DO 30 J = IFIRST,NTOT
+findj.f:*       Find index of ghost particle with specified name (search NTOT).
+findj.f:      DO 10 K = 1,NTOT
+findm.f:              DO 8 J = N+1,NTOT
+findm.f:              DO 20 K = N+1,NTOT
+fpoly1.f:      JLAST = NTOT
+fpoly1.f:      IF (KCASE.EQ.1) JLAST = NTOT - 1
+fpoly1.f:              F(K,NTOT) = (A1*F(K,ICOMP) + A2*F(K,JCOMP))/BODY(NTOT)
+fpoly1.f:              FDOT(K,NTOT) = (A1*FDOT(K,ICOMP) + A2*FDOT(K,JCOMP))/
+fpoly1.f:     &                                                        BODY(NTOT)
+fpoly1.f:              FI(K,NTOT) = (A1*FI(K,ICOMP) + A2*FI(K,JCOMP))/BODY(NTOT)
+fpoly1.f:              D1(K,NTOT) = (A1*D1(K,ICOMP) + A2*D1(K,JCOMP))/BODY(NTOT)
+fpoly1.f:              FR(K,NTOT) = (A1*FR(K,ICOMP) + A2*FR(K,JCOMP))/BODY(NTOT)
+fpoly1.f:              D1R(K,NTOT) = (A1*D1R(K,ICOMP) + A2*D1R(K,JCOMP))/
+fpoly1.f:     &                                                        BODY(NTOT)
+fpoly1.f:          J1 = NTOT
+fpoly1.f:          J2 = NTOT
+fpoly2.f:      JLAST = NTOT
+fpoly2.f:      IF (KCASE.EQ.1) JLAST = NTOT - 1
+hidat.f:          DO 2 I = N+1,NTOT
+hidat.f:              DO 8 K = IFIRST,NTOT
+hidat.f:                  DO 25 K = N+1,NTOT
+hidat.f:          DO 26 K = IFIRST,NTOT
+hipop.f:      NTOT = N
+hivel.f:              I2 = NTOT
+hivel.f:                      I2 = NTOT
+hivel.f:*     IF (I2.EQ.NTOT) THEN
+impact.f:          ZMU = BODY(2*NPAIRS-1)*BODY(2*NPAIRS)/BODY(NTOT)
+input.f:      NTOT = N
+intgrt.f:      DO 1000 I = IFIRST,NTOT
+intgrt.f:              DO 14 I = IFIRST,NTOT
+intgrt.f:          DO 20 I = IFIRST,NTOT
+intgrt.f:          DO 40 J = IFIRST,NTOT
+jacobi.f:      DO 60 I = IFIRST,NTOT
+jacobi.f:          DO 55 J = IFIRST,NTOT
+ksinit.f:      BODY(NTOT) = BODY(ICOMP) + BODY(JCOMP)
+ksinit.f:      RS(NTOT) = RS(ICOMP)
+ksinit.f:      NAME(NTOT) = NZERO + NAME(ICOMP)
+ksinit.f:      RADIUS(NTOT) = 0.0
+ksinit.f:      TEV(NTOT) = 1.0E+10
+ksinit.f:      TEV0(NTOT) = 1.0E+10
+ksinit.f:      BODY0(NTOT) = BODY(NTOT)
+ksinit.f:      EPOCH(NTOT) = TIME*TSTAR
+ksinit.f:      KSTAR(NTOT) = 0
+ksinit.f:          X(K,NTOT) = (BODY(ICOMP)*X(K,ICOMP) + BODY(JCOMP)*X(K,JCOMP))/
+ksinit.f:     &                                                        BODY(NTOT)
+ksinit.f:          X0DOT(K,NTOT) = (BODY(ICOMP)*X0DOT(K,ICOMP) + BODY(JCOMP)*
+ksinit.f:     &                                        X0DOT(K,JCOMP))/BODY(NTOT)
+ksinit.f:          XDOT(K,NTOT) = X0DOT(K,NTOT)
+ksinit.f:          X0(K,NTOT) = X(K,NTOT)
+ksinit.f:          CALL FPOLY2(NTOT,NTOT,1)
+ksinit.f:          ICM = NTOT
+ksinit.f:     &                                              BODY(NTOT))/R(IPAIR)
+ksinit.f:      EB = H(IPAIR)*BODY(ICOMP)*BODY(JCOMP)/BODY(NTOT)
+ksinit.f:      SEMI = -0.5*BODY(NTOT)/H(IPAIR)
+ksinit.f:          TK = TWOPI*SEMI*SQRT(SEMI/BODY(NTOT))
+ksinit.f:              CALL TPERI(SEMI,UI,VI,BODY(NTOT),TP)
+ksinit.f:              STEP(ICOMP) = 0.5*MIN(TK,STEP(NTOT)) - TP
+ksinit.f:          TK = TWOPI*SEMI*SQRT(SEMI/BODY(NTOT))
+ksinit.f:          IF (KZ(26).GT.0.AND.STEP(NTOT).GT.TK) THEN
+ksinit.f:              IMOD = 1 + LOG(STEP(NTOT)/TK)/0.69
+ksinit.f:      SEMI = -0.5*BODY(NTOT)/H(IPAIR)
+ksinit.f:      ECC2 = (1.0-R(IPAIR)/SEMI)**2 + TDOT2(IPAIR)**2/(BODY(NTOT)*SEMI)
+ksinit.f:      IF (EB.LT.EBH.AND.RAP.LT.0.05*RS(NTOT)) THEN 
+ksinit.f:          R0(IPAIR) = MAX(RMIN,-BODY(NTOT)/H(IPAIR))
+ksinit.f:          RI = SQRT((X(1,NTOT) - RDENS(1))**2 +
+ksinit.f:     &              (X(2,NTOT) - RDENS(2))**2 +
+ksinit.f:     &              (X(3,NTOT) - RDENS(3))**2)
+ksinit.f:     &                  STEP(NTOT), LIST(1,ICOMP), LIST(1,NTOT)
+ksinit.f:              PD = DAYS*SEMI*SQRT(ABS(SEMI)/BODY(NTOT))
+ksinit.f:     &                      KSTAR(ICOMP), KSTAR(JCOMP), KSTAR(NTOT),
+ksinit.f:          SEMI = -0.5*BODY(NTOT)/H(IPAIR)
+ksinit.f:          RI = SQRT((X(1,NTOT) - RDENS(1))**2 +
+ksinit.f:     &              (X(2,NTOT) - RDENS(2))**2 +
+ksinit.f:     &              (X(3,NTOT) - RDENS(3))**2)
+ksreg.f:          IF (JCOMP + 1.GT.NTOT) THEN
+ksreg.f:      NTOT = N + NPAIRS
+ksreg.f:      DO 30 I = IFIRST-2,NTOT-1
+ksreg.f:          LIST(L,NTOT) = LIST(L,I)
+ksterm.f:      NTOT = N + NPAIRS
+lagr2.f:      DO 10 I = IFIRST,NTOT
+lagr2.f:      DO 45 I = IFIRST,NTOT
+lagr2.f:      DO 145 I = IFIRST,NTOT
+lagr.f:      DO 10 I = IFIRST,NTOT
+levels.f:      DO 20 I = IFIRST,NTOT
+mdot.f:      DO 5 J = 1,NTOT
+mdot.f:              DO 20 K = N+1,NTOT
+mdot.f:                  CALL XVPRED(IFIRST,NTOT)
+mdot.f:                  J = NTOT
+mdot.f:      DO 80 J = 1,NTOT
+mdot.f:              DO 106 I = N+1,NTOT
+mdot.f:      DO 122 J = N+1,NTOT
+merge.f:*       Also remove ghost from list of ICOMP (use NTOT as dummy here).
+merge.f:      CALL NBREM(NTOT,1,1)
+merge.f:      NAME(NTOT) = NZERO - NAME(NTOT)
+merge.f:      NAMEM(IMERGE) = NAME(NTOT)
+mloss.f:      DO 20 J = 1,NTOT
+mydump.f:      COMMON/NAMES/  NTOT,NPAIRS,NTTOT,A(NA)
+mydump.f:        NTSAVE = NTOT
+mydump.f:            NTOT = NTTOT
+mydump.f:        NTOT = NTSAVE
+mydump.f:          write (*,*) "DANGER NTOT > NMAX !"
+mydump.f:        NTSAVE = NTOT
+mydump.f:            NTOT = NTTOT
+mydump.f:        NTOT = NTSAVE
+nbhist.f:      DO 20 I = IFIRST,NTOT
+nblist.f:      DO 10 J = IFIRST,NTOT
+Binary file nbody6 matches
+Binary file nbody6mp matches
+nbsort.f:      JMIN = NTOT + 1
+nbsort.f:      FAC = NNB/FLOAT(NTOT)
+offset.f:      DO 10 I = 1,NTOT
+output.f:      CALL XVPRED(IFIRST,NTOT)
+output.f:      DO 30 I = IFIRST,NTOT
+output.f:      DO 90 I = 1,NTOT
+output.f:                  DO 94 K = IFIRST,NTOT
+output.f:*       Split into WRITE (3) NTOT & WRITE (3) ..  if disc instead of tape.
+output.f:      WRITE (3)  NTOT, MODEL, NRUN, NK
+output.f:      WRITE (3)  (AS(K),K=1,NK), (BODYS(J),J=1,NTOT),
+output.f:     &           ((XS(K,J),K=1,3),J=1,NTOT), ((VS(K,J),K=1,3),J=1,NTOT),
+output.f:     &           (NAME(J),J=1,NTOT)
+output.f:          DO 120 I = IFIRST,NTOT
+plpot1.f:          DO 10 I = IFIRST,NTOT
+poti.f:      DO 30 JDUM = IFIRST,NTOT
+regint.f:      ILIST(NNB+2) = NTOT + 1
+regint.f:*       Last value of second search index is NNB + 2 which holds NTOT + 1.
+regint.f:          LIST(L,I) = NTOT + 1
+remove.f:   10 IF (I.GT.NTOT) GO TO 50
+remove.f:      DO 15 J = I,NTOT
+rename.f:      DO 40 J = 1,NTOT-1
+rename.f:                  IF (NIJ.EQ.2.OR.J.LT.IFIRST - 3) INEW = NTOT
+reset2.f:          DO 4 J = IFIRST,NTOT
+reset2.f:      DO 10 I = 1,NTOT
+reset.f:*       Note that ghost may be saved in an old binary c.m. (search NTOT). 
+reset.f:      DO 10 I = 1,NTOT
+reset.f:      DO 30 I = 1,NTOT
+reset.f:*     VI2 = X0DOT(1,NTOT)**2 + X0DOT(2,NTOT)**2 + X0DOT(3,NTOT)**2
+reset.f:*     CORR = 1.0 + 2.0*DPHI/(BODY(NTOT)*VI2)
+reset.f:*         X0DOT(K,NTOT) = SQRT(CORR)*X0DOT(K,NTOT)
+reset.f:      EB = BODY(2*NPAIRS-1)*BODY(2*NPAIRS)*H(NPAIRS)/BODY(NTOT)
+reset.f:      IF (KSTAR(NTOT).GE.10.AND.KSTAR(NTOT).LE.20) THEN
+reset.f:          TEV(NTOT) = TIME + MAX(DTR,0.0D0)
+reset.f:          TMDOT = MIN(TEV(NTOT),TEV(ICOMP),TMDOT)
+reset.f:      DO 96 I = N+1,NTOT
+scale.f:*       Re-define N & NTOT for total energy calculation (NTOT = N for ZKIN).
+scale.f:          NTOT = N
+scale.f:      NCM = NTOT
+scale.f:          NTOT = N
+scale.f:          DO 743 I = 1,NTOT
+setup.f:      NTOT = N
+shrink.f:          DO 10 J = IFIRST,NTOT
+subint.f:                  TPREV = TIME - STEP(NTOT)
+sweep.f:              RI2 = RI2 + (X(K,NTOT) - RDENS(K))**2
+sweep.f:     &                            TDOT2(NPAIRS)**2/(BODY(NTOT)*SEMI)
+sweep.f:     &                      LIST(1,NTOT), SQRT(RI2), ECC, SEMI,
+update.f:      DO 50 J = 1,NTOT
+update.f:   60 DO 80 J = 1,NTOT

@@ -1,0 +1,20 @@
+data.f:      IF (KZ(22).GE.2.OR.KZ(22).EQ.-1) THEN
+data.f:          IF (KZ(22).GT.2.OR.KZ(22).EQ.-1) GO TO 50
+data.f:*     IF (KZ(22).EQ.-1) THEN
+data.f:      IF (KZ(22).EQ.2.AND.KZ(20).EQ.0) GO TO 50
+data.f:   40 IF (KZ(22).EQ.0.OR.KZ(22).EQ.1) THEN
+instar.f:          IF(KZ(22).EQ.3)THEN
+nblist.f:      IF (KZ(5).GT.0.OR.KZ(22).GE.2) THEN
+scale.f:      IF ((KZ(22).EQ.4.OR.KZ(22).EQ.-1).AND.(NBIN0.GT.0)) THEN
+scale.f:      IF (KZ(22).GT.2.OR.KZ(22).EQ.-1.OR.KZ(5).EQ.3) GO TO 52
+scale.f:      if (KZ(22).EQ.-1) then
+scale.f:      IF (KZ(22).EQ.3.OR.KZ(5).EQ.2.OR.KZ(5).EQ.3) THEN
+scale.f:      ELSE IF(KZ(22).NE.-1) THEN
+scale.f:      IF ((KZ(22).EQ.4.OR.KZ(22).EQ.-1).AND.(NBIN0.GT.0)) THEN
+scale.f:      if (KZ(22).EQ.-1) then
+scale.f:      IF (KZ(22).EQ.1) THEN
+scale.f:      IF (KZ(22).EQ.-1.OR.KZ(22).EQ.5) THEN
+setup.f:          IF (KZ(22).EQ.1) THEN
+setup.f:      IF (KZ(22).EQ.1) CALL FLUSH(10)
+xtrnl0.f:              IF(KZ(22).EQ.2) RBAR = RT/RTIDE
+xtrnl0.f:          IF (KZ(22).EQ.2) THEN

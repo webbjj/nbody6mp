@@ -1,0 +1,171 @@
+brake2.f:           ZPARS=ZPARSP(1:20,PTYPE(I1))
+brake2.f:         CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+brake2.f:         CALL hrdiag(M0,AJ,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+brake2.f:           ZPARS=ZPARSP(1:20,PTYPE(I2))
+brake2.f:         CALL star(KW,M0,M2,TM,TN,TSCLS,LUMS,GB,ZPARS)
+brake2.f:         CALL hrdiag(M0,AJ,M2,TM,TN,TSCLS,LUMS,GB,ZPARS,
+comenv.f:        ZPARS=ZPARSP(1:20,PTYPE(I1))
+comenv.f:      CALL star(KW1,M01,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS)
+comenv.f:      CALL hrdiag(M01,AJ1,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS,
+comenv.f:        ZPARS=ZPARSP(1:20,PTYPE(I2))
+comenv.f:      CALL star(KW2,M02,M2,TM2,TN,TSCLS2,LUMS,GB,ZPARS)
+comenv.f:      CALL hrdiag(M02,AJ2,M2,TM2,TN,TSCLS2,LUMS,GB,ZPARS,
+comenv.f:             ZPARS=ZPARSP(1:20,PTYPE(I1))
+comenv.f:            CALL star(KW1,M01,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS)
+comenv.f:            CALL hrdiag(M01,AJ1,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS,
+comenv.f:            CALL gntage(MC1,M1,KW1,ZPARS,M01,AJ1)
+comenv.f:              ZPARS=ZPARSP(1:20,PTYPE(I1))
+comenv.f:            CALL star(KW1,M01,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS)
+comenv.f:            CALL hrdiag(M01,AJ1,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS,
+comenv.f:              ZPARS=ZPARSP(1:20,PTYPE(I1))
+comenv.f:            IF(KW1.LE.3.AND.M01.LE.ZPARS(2))THEN
+comenv.f:                   ZPARS=ZPARSP(1:20,PTYPE(I2))
+comenv.f:               IF((KW2.GE.2.AND.KW2.LE.3.AND.M02.LE.ZPARS(2)).OR.
+comenv.f:              ZPARS=ZPARSP(1:20,PTYPE(I1))
+comenv.f:            CALL star(KW1,M01,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS)
+comenv.f:            CALL hrdiag(M01,AJ1,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS,
+comenv.f:              ZPARS=ZPARSP(1:20,PTYPE(I2))
+comenv.f:            CALL star(KW2,M02,M2,TM2,TN,TSCLS2,LUMS,GB,ZPARS)
+comenv.f:            CALL hrdiag(M02,AJ2,M2,TM2,TN,TSCLS2,LUMS,GB,ZPARS,
+comenv.f:               ZPARS=ZPARSP(1:20,PTYPE(I1))
+comenv.f:               ZPARS=ZPARSP(1:20,PTYPE(I2))
+comenv.f:         XX = 1.D0 + ZPARS(7)
+comenv.f:         DERI = MF**ZPARS(7)*((1.D0+XX)*MF - XX*(MC1 + MC22))
+comenv.f:            CALL star(KW,M1,M1,TM2,TN,TSCLS2,LUMS,GB,ZPARS)
+comenv.f:               CALL star(KW,M01,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS)
+comenv.f:            CALL star(KW,M01,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS)
+comenv.f:            CALL gntage(MC1,M1,KW,ZPARS,M01,AJ1)
+comenv.f:            CALL star(KW,M01,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS)
+comenv.f:         CALL hrdiag(M01,AJ1,M1,TM1,TN,TSCLS1,LUMS,GB,ZPARS,
+data.f:            CALL zcnsts(ZMET,ZPARS)
+data.f:            WRITE (6,4)  ZPARS(11), ZPARS(12), ZMET
+data.f:*           Assign sub-population type its own ZPARS
+data.f:              CALL zcnsts(ZPOP(J),ZPARS)
+data.f:              ZPARSP(1:20,J)=ZPARS
+data.f:*             If Y is not assigned then take value from ZPARS
+data.f:              IF(YPOP(J).EQ.0) YPOP(J)=ZPARS(12)
+data.f:              WRITE (6,4)  ZPARSP(11,J), ZPARSP(12,J),
+events.f:              zpars=ZPARSP(1:20,PTYPE(J))
+expel.f:        ZPARS=ZPARSP(1:20,PTYPE(I1))
+expel.f:      CALL star(KW1,M01,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+expel.f:      CALL hrdiag(M01,AJ1,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+expel.f:            ZPARS=ZPARSP(1:20,PTYPE(I2))
+expel.f:          CALL star(KW2,M02,M2,TM,TN,TSCLS,LUMS,GB,ZPARS)
+expel.f:          CALL hrdiag(M02,AJ2,M2,TM,TN,TSCLS,LUMS,GB,ZPARS,
+hrdiag.f:*       ZPARS   Parameters for distinguishing various mass intervals.
+hrplot.f:             CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+hrplot.f:             CALL HRDIAG(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+hrplot.f:                     CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+hrplot.f:                     CALL HRDIAG(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+hrplot.f:                     CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+hrplot.f:                     CALL HRDIAG(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+hrplot.f:                 CALL STAR(KW2,M0,M2,TM,TN,TSCLS,LUMS,GB,ZPARS)
+hrplot.f:                 CALL HRDIAG(M0,AGE,M2,TM,TN,TSCLS,LUMS,GB,ZPARS,
+hrplot.old.f:          CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+hrplot.old.f:          CALL HRDIAG(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+hrplot.old.f:                  CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+hrplot.old.f:                  CALL HRDIAG(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+hrplot.old.f:                  CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+hrplot.old.f:                  CALL HRDIAG(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+hrplot.old.f:              CALL STAR(KW2,M0,M2,TM,TN,TSCLS,LUMS,GB,ZPARS)
+hrplot.old.f:              CALL HRDIAG(M0,AGE,M2,TM,TN,TSCLS,LUMS,GB,ZPARS,
+instar.f:        WRITE (6,9)  ZPARS(11), ZPARS(12), ZMET
+instar.f:          ZPARS=ZPARSP(1:20,I)
+instar.f:          WRITE (6,9)  ZPARS(11), ZPARS(12), ZPOP(I)
+instar.f:          ZPARS=ZPARSP(1:20,PTYPE(I))
+instar.f:          CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+instar.f:          CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+mdot.f:           ZPARS=ZPARSP(1:20,PTYPE(I))
+mdot.f:         CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+mdot.f:         CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+mdot.f:           ZPARS=ZPARSP(1:20,PTYPE(I))
+mdot.f:               CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+mdot.f:                  IF(GB(9).LT.MASSC(K).OR.M10.GT.ZPARS(3))THEN
+mdot.f:         CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+mdot.f:         CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+mdot.f:            DME = 2.08D-03*(1.D0/(1.D0 + ZPARS(11)))*RM
+mdot.mp.f:           ZPARS=ZPARSP(1:20,PTYPE(I))
+mdot.mp.f:         CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+mdot.mp.f:         CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+mdot.mp.f:           ZPARS=ZPARSP(1:20,PTYPE(I))
+mdot.mp.f:               CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+mdot.mp.f:                  IF(GB(9).LT.MASSC(K).OR.M10.GT.ZPARS(3))THEN
+mdot.mp.f:         CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+mdot.mp.f:         CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+mdot.mp.f:            DME = 2.08D-03*(1.D0/(1.D0 + ZPARS(11)))*RM
+mix.f:        ZPARS=ZPARSP(1:20,PTYPE(I1))
+mix.f:      CALL star(K1,M01,M1,TMS1,TN,TSCLS,LUMS,GB,ZPARS)
+mix.f:        ZPARS=ZPARSP(1:20,PTYPE(I2))
+mix.f:      CALL star(K2,M02,M2,TMS2,TN,TSCLS,LUMS,GB,ZPARS)
+mix.f:            ZPARS=ZPARSP(1:20,PTYPE(I1))
+mix.f:            ZPARS=ZPARSP(1:20,PTYPE(I2))
+mix.f:         CALL star(KW,M3,M3,TMS3,TN,TSCLS,LUMS,GB,ZPARS)
+mix.f:         CALL star(KW,M03,M3,TMS3,TN,TSCLS,LUMS,GB,ZPARS)
+mix.f:         CALL gntage(MC3,M3,KW,ZPARS,M03,AGE3)
+mix.f:         CALL gntage(MC3,M3,KW,ZPARS,M03,AGE3)
+mix.f:         CALL star(KW,M03,M3,TMS3,TN,TSCLS,LUMS,GB,ZPARS)
+mix.f:         CALL star(KW,M03,M3,TMS3,TN,TSCLS,LUMS,GB,ZPARS)
+mix.f:         CALL hrdiag(M03,AGE3,M3,TMS3,TN,TSCLS,LUMS,GB,ZPARS,
+mydump.f:     &               ZPARSP(20,NPOPSMAX)
+nbody6.f:                CALL ZCNSTS(ZMET,ZPARS)
+nbody6.f:                  CALL ZCNSTS(ZPOP(I),ZPARS)
+nbody6.f:                  ZPARSP(1:20,I)=ZPARS
+newtev.f:        ZPARS=ZPARSP(1:20,PTYPE(IX))
+newtev.f:      CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+roche.f:               ZPARS=ZPARSP(1:20,PTYPE(J))
+roche.f:             CALL star(KW,M01,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+roche.f:             CALL hrdiag(M01,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+roche.f:               ZPARS=ZPARSP(1:20,PTYPE(J))
+roche.f:                CALL star(KW,MASS0(K),MASS(K),TM,TN,TSCLS,LUMS,GB,ZPARS)
+roche.f:                   IF(GB(9).LT.MASSC(K).OR.M01.GT.ZPARS(3))THEN
+roche.f:                CALL star(KW,MASS0(K),MASS(K),TM,TN,TSCLS,LUMS,GB,ZPARS)
+roche.f:            ZPARS=ZPARSP(1:20,PTYPE(J1))
+roche.f:            ZPARS=ZPARSP(1:20,PTYPE(J2))
+roche.f:      DME = 2.08D-03*EDDFAC*(1.D0/(1.D0 + ZPARS(11)))*RAD(2)*TB
+roche.f:*        QC = (1.67D0-ZPARS(7)+2.D0*(MASSC(1)/MASS(1))**5)/2.13D0
+roche.f:             ZPARS=ZPARSP(1:20,PTYPE(J2))
+roche.f:     &                                 TSCLS,LUMS,GB,ZPARS)
+roche.f:              ZPARS=ZPARSP(1:20,PTYPE(J2))
+roche.f:     &                                    TSCLS,LUMS,GB,ZPARS)
+roche.f:              ZPARS=ZPARSP(1:20,PTYPE(J2))
+roche.f:               CALL gntage(MASSC(2),MASS(2),KST,ZPARS,MASS0(2),AJ(2))
+roche.f:              ZPARS=ZPARSP(1:20,PTYPE(J2))
+roche.f:            CALL gntage(MASSC(2),MASS(2),KSTAR(J2),ZPARS,MASS0(2),AJ(2))
+roche.f:                    ZPARS=ZPARSP(1:20,PTYPE(J2))
+roche.f:                  CALL gntage(MCX,M2,KST,ZPARS,MASS0(2),AJ(2))
+roche.f:                    ZPARS=ZPARSP(1:20,PTYPE(J2))
+roche.f:                  CALL gntage(MASSC(2),M2,KST,ZPARS,MASS0(2),AJ(2))
+roche.f:              ZPARS=ZPARSP(1:20,PTYPE(J))
+roche.f:            IF(KSTAR(J).EQ.2.AND.MASS0(K).LE.ZPARS(3))THEN
+roche.f:     &                   LUMS,GB,ZPARS)
+roche.f:           ZPARS=ZPARSP(1:20,PTYPE(J1))
+roche.f:     &             TSCLS,LUMS,GB,ZPARS)
+roche.f:           ZPARS=ZPARSP(1:20,PTYPE(J2))
+roche.f:     &             TSCLS,LUMS,GB,ZPARS)
+roche.f:           ZPARS=ZPARSP(1:20,PTYPE(J))
+roche.f:         CALL star(KW,M01,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+roche.f:         CALL hrdiag(M01,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+spiral.f:         ZPARS7 = 0.3
+spiral.f:         QC = (1.67D0-ZPARS7+2.D0*(ZMC/BODY(J1))**5)/2.13D0
+synch.f:            ZPARS=ZPARSP(1:20,PTYPE(J1))
+synch.f:          CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+synch.f:          CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trdot.f:        ZPARS=ZPARSP(1:20,PTYPE(I))
+trdot.f:      CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+trdot.f:      CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trdot.f:         CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trdot.f:      CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trflow.f:        ZPARS=ZPARSP(1:20,PTYPE(J1))
+trflow.f:      CALL star(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
+trflow.f:      CALL hrdiag(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trflow.f:         CALL hrdiag(M0,AJ,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trflow.f:            CALL hrdiag(M0,T,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trflow.f:         CALL hrdiag(M0,AJ,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trflow.f:         CALL hrdiag(M0,AJ,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trflow.f:            IF(M0.LT.ZPARS(2).OR.TN.LE.TSCLS(2)) GOTO 200
+trflow.f:            CALL hrdiag(M0,AJ,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trflow.f:            CALL hrdiag(M0,AJ,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trflow.f:         CALL hrdiag(M0,T,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
+trflow.f:         RR = RAGBF(M1,LUM,ZPARS(2))
+trflow.f:         RR = RAGBF(M1,LUM,ZPARS(2))
+trflow.f:         DER = RAGBDF(M1,LUM,ZPARS(2))
