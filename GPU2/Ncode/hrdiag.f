@@ -559,9 +559,7 @@ c                     endif
                   if(mt.le.mxns)then
 *
 * Zero-age Neutron star
-*                   
-                     write(*,*) 'DBUG MP: ',mass,mt,tm,tn,tscls(1),
-     &zpars(15)
+*
                      kw = 13
                   else
 *
