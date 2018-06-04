@@ -10,7 +10,7 @@ Modifications have been made throughout the code, marked by comments of "BEGIN N
 
 To make life a little easier, a sample input file to model two sub-populations with different Helium abundances would be:
 
-1 1000000.0
+1 1000000.0\n
 40000 1 100 27774 400 1
 0.02 0.02 0.15 2.0 10.0 12000.0 1.0 6.34505264 0.60884957
 2 0 0 0 1 0 1 0 0 0
