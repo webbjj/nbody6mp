@@ -78,9 +78,6 @@
              KW = KSTAR(I)
              AGE = MAX(TPLOT,TEV0(I))*TSTAR - EPOCH(I)
              MC = 0.D0
-*            BEGIN NBODY6MP
-             ZPARS=ZPARSP(1:20,MPTYPE(I))
-*            END NBODY6MP
              CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
              CALL HRDIAG(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
      &                   RM,LUM,KW,MC,RCC,ME,RE,K2)
@@ -128,9 +125,6 @@
                      KW = KSTAR(J1)
                      AGE = MAX(TPLOT,TEV0(J1))*TSTAR - EPOCH(J1)
                      MC = 0.D0
-*                    BEGIN NBODY6MP
-                     ZPARS=ZPARSP(1:20,MPTYPE(J1))
-*                    END NBODY6MP
                      CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
                      CALL HRDIAG(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
      &                           RM,LUM,KW,MC,RCC,ME,RE,K2)
@@ -172,9 +166,6 @@
                      AGE = MAX(TPLOT,TEV0(J1))*TSTAR - EPOCH(J1)
                      KW = KSTAR(J1)
                      MC = 0.D0
-*                    BEGIN NBODY6MP
-                     ZPARS=ZPARSP(1:20,MPTYPE(J1))
-*                    END NBODY6MP
                      CALL STAR(KW,M0,M1,TM,TN,TSCLS,LUMS,GB,ZPARS)
                      CALL HRDIAG(M0,AGE,M1,TM,TN,TSCLS,LUMS,GB,ZPARS,
      &                           RM,LUM,KW,MC,RCC,ME,RE,K2)
@@ -195,9 +186,6 @@
                  KW2 = KSTAR(J2)
                  AGE = MAX(TPLOT,TEV0(J2))*TSTAR - EPOCH(J2)
                  MC = 0.D0
-*                BEGIN NBODY6MP
-                 ZPARS=ZPARSP(1:20,MPTYPE(J1))
-*                END NBODY6MP
                  CALL STAR(KW2,M0,M2,TM,TN,TSCLS,LUMS,GB,ZPARS)
                  CALL HRDIAG(M0,AGE,M2,TM,TN,TSCLS,LUMS,GB,ZPARS,
      &                       RM2,LUM2,KW2,MC,RCC,ME,RE,K2)

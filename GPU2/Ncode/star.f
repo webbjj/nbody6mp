@@ -84,8 +84,7 @@
       tm = MAX(zpars(8),thookf(mass))*tscls(1)
 
 * BEGIN NBODY6MP - SCALE TM GIVEN HELIUM ABUNDANCE, LET THOOK=0.0
-* ONLY ENTER IF INPUT Y > Z**0.4 (ESSENTIALLY NOT ZERO)
-      if (zpars(15).gt.zpars(14).and. mass.le.mscale) then
+      if (zpars(15).gt.zpars(12).and. mass.le.mscale) then
 
 *       Scale to tm from zpars(12) to Y=0.248
         tm=tm/(10.0**(ascale*(zpars(12)-0.248)**2.0+

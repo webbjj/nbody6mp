@@ -603,11 +603,6 @@
           END IF
       END IF
 *
-*     BEGIN NBODY6SMBH
-      IF (KZ(19) .LT. 0) THEN
-          CALL BHMGAIN
-      END IF
-*     END NBODY6SMBH
 *       Check optional mass loss time at end of block-step.
       IF (KZ(19).GT.0) THEN
 *       Delay until time commensurate with 100-year step (new polynomials).
