@@ -10,23 +10,23 @@ Modifications have been made throughout the code, marked by comments of "BEGIN N
 
 To make life a little easier, a sample input file to model two sub-populations with different Helium abundances would be:
 
-1 1000000.0
-40000 1 100 27774 400 1
-0.02 0.02 0.15 2.0 10.0 12000.0 1.0 6.34505264 0.60884957
-2 0 0 0 1 0 1 0 0 0
-0 3 0 3 2 1 0 1 3 0
-1 4 2 0 0 2 2 1 0 1
-1 0 2 2 1 0 0 2 0 3
-0 0 0 0 0 0 0 0 0 2
-2.0E-06 0.0001 0.2 1.0 1.0E-06 0.001
-2.3 50.0 0.1 0 0 0.0001 0.0 5.0
-20000 0.0 0.0001
-20000 0.3 0.0001
-0.5 0.0 0.0 50.0 1.0
-1.5D+10 5.0D+10 4.0 0.5 220.0 8.5 0.0 0.0 0.0
-20.0 0.0 0.0 0.0 231.8 0.0
-0.0 1.0 1.0 1.0
-1.0
+1 1000000.0 <br />
+40000 1 100 27774 400 1 <br />
+0.02 0.02 0.15 2.0 10.0 12000.0 1.0 6.34505264 0.60884957 <br />
+2 0 0 0 1 0 1 0 0 0 <br />
+0 3 0 3 2 1 0 1 3 0 <br />
+1 4 2 0 0 2 2 1 0 1 <br />
+1 0 2 2 1 0 0 2 0 3 <br />
+0 0 0 0 0 0 0 0 0 2 <br />
+2.0E-06 0.0001 0.2 1.0 1.0E-06 0.001 <br />
+2.3 50.0 0.1 0 0 0.0001 0.0 5.0 <br />
+20000 0.0 0.0001 <br />
+20000 0.3 0.0001 <br />
+0.5 0.0 0.0 50.0 1.0 <br />
+1.5D+10 5.0D+10 4.0 0.5 220.0 8.5 0.0 0.0 0.0 <br />
+20.0 0.0 0.0 0.0 231.8 0.0 <br />
+0.0 1.0 1.0 1.0 <br />
+1.0 <br />
 
 The new rows required by NBODY6MP are rows 11 and 12, each of which contain the parameters NPOP(I), YPOP(I), and ZPOP(I). NPOP(I) is the number of stars in population the i'th population, YPOP(I) is the He abundance and ZPOP(I) the metallicity. Note when YPOP(I)=0 the default value for Y in NBODY6 is used for the given value of ZPOP(I). The corresponding fort.10 file would containt M,X,Y,Z,VX,VY,VZ,PTYPE for 40,000 stars.
 
