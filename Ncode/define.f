@@ -59,6 +59,13 @@
 *       ZMET    Metal abundance (in range 0.03 - 0.0001).
 *       EPOCH0  Evolutionary epoch (in 10**6 yrs; NB! < 0 for PM evolution).
 *       DTPLOT  Plotting interval for HRDIAG (N-body units; >= DELTAT).
+*
+***     BEGIN NBODY6MP
+*       if (kz(50).gt.1 .and. kz(22).gt.1)
+*       DO I=1,KZ(50)       
+*       NPOP(I) YPOP(I) ZPOP(I)
+*       
+***     END NBODY6MP
 ***
 * SETUP: if (kz(5).eq.2)
 *
@@ -291,7 +298,9 @@
 *      47  Reserved for data analysis project on NBODY6++.
 *      48  Not used.
 *      49  Post-Newtonian perturbations included in KS (dir Block).
-*      50  Not used.
+*      BEGIN NBODY6MP
+*      50  Number of differ subpopulations
+*      END NBODY6MP
 *       ---------------------------------------------------------------------
 *
 * NBODY6: Restart from fort.1
